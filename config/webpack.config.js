@@ -18,6 +18,9 @@ module.exports = {
     compress: true, // 压缩
     open: true // 自动打开浏览器
   },
+  resolve: {
+    extensions: ['.js', '.vue', '.json', '.less', '.css']
+  },
   module: {
     rules: [
       {
