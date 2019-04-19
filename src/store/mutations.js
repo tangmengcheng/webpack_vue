@@ -1,7 +1,9 @@
 import * as types from './mutation-types'
 
-export mutations = {
+const mutations = {
   [types.ADD_COUNT](state, payload) {
     state.count = payload
   }
 }
+
+export default mutations
