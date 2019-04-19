@@ -9,7 +9,7 @@ module.exports = {
   entry: './src/main.js',
   output: {
     filename: 'bundle.[hash:8].js',
-    path: path.resolve(__dirname, 'dist')
+    path: path.resolve(__dirname, '../', 'dist')
   },
   devServer: { // 开发服务器配置
     port: 3000,

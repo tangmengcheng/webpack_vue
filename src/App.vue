@@ -3,7 +3,7 @@
     hello world
     {{this.$store.state.count}}
     {{this.$store.getters.count}}
-    <button @click='change'>点击改变State</button>
+    <button @click='change' id='btn'>点击改变State</button>
     <button @click='asyncChange'>点击异步改变State</button>
     <ul>
       <li v-for="(item, index) in arr" :key='index'>
@@ -74,6 +74,16 @@ export default {
 }
 </script>
 
-<style>
+<style lang='less'>
+@import './assets/common/style.less';
+#btn {
+  width: 100px;
+  height: 50px;
+  box-shadow: 0 0 5px #000;
+  & {
+    font-size: 12px;
+    color: @bgColor;
+  }
+}
 </style>
 
