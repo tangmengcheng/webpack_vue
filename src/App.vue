@@ -23,6 +23,10 @@
     </table>
     <!-- <p>mapGetters辅助函数对象的方式getters获取list数据{{this.getters_list}}</p> -->
     <p>mapGetters辅助函数数组的方式getters获取list数据{{this.list}}</p>
+    <!-- 添加路由渲染 -->
+    <router-link to='/a'>A组件</router-link>
+    <router-link to='/b'>B组件</router-link>
+    <router-view />
   </div>
 </template>
 

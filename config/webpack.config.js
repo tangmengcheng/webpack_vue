@@ -19,7 +19,10 @@ module.exports = {
     open: true // 自动打开浏览器
   },
   resolve: {
-    extensions: ['.js', '.vue', '.json', '.less', '.css']
+    extensions: ['.js', '.vue', '.json', '.less', '.css'],
+    alias: {
+      '@': path.resolve(__dirname, '../', 'src')
+    }
   },
   module: {
     rules: [
