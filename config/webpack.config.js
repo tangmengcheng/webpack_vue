@@ -3,7 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 const VueLoaderPlugin = require('vue-loader/lib/plugin') // VueLoaderPlugin 注意路径一定是vue-loader/lib/plugin
-
+const webpack = require('webpack')
 module.exports = {
   mode: 'development',
   entry: './src/main.js',
@@ -12,7 +12,7 @@ module.exports = {
     path: path.resolve(__dirname, '../', 'dist')
   },
   devServer: { // 开发服务器配置
-    port: 3000,
+    port: 8888,
     progress: true, // 编译进度条
     contentBase: './dist', // 以dist目录为默认的启动目录
     compress: true, // 压缩
@@ -101,7 +101,10 @@ module.exports = {
       },
       canPrint: true // 是否将插件信息打印到控制台
     }),
-    new VueLoaderPlugin()
+    new VueLoaderPlugin(),
+    new webpack.DllReferencePlugin({
+      manifest: path.resolve(__dirname, '../dist', 'manifest.json')
+    })
   ],
   performance: {
     hints: false // 取消警告提示
